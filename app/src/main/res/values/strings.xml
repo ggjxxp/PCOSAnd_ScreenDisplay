@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name_hotel">酒店押金-未来之窗</string>
+    <string name="app_name_zybx">职员报销-未来之窗</string>
+    <string name="app_name_bcxd">布草洗涤厂-未来之窗</string>
+    <string name="app_name_yjselfform">万能押金系统-未来之窗</string>
+    <string name="app_name">酒店押金-未来之窗</string>
+    <string name="app_name_pcdianzi">屏触电子开单</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">CyberWin \n Future</string>
+    <string name="turn_on_flashlight">打开闪光灯</string>
+    <string name="turn_off_flashlight">关闭闪光灯</string>
+    <string name="zxing_msg_default_status">未来之窗人工智能-解码器-V2024</string>
+    <string name="zxing_button_ok">确认</string>
+    <string name="zxing_app_name">酒店押金</string>
+    <string name="app_name_manager">商家管理-未来之窗</string>
+    <string name="app_name_Studio">集成开发-未来之窗</string>
+    <string name="app_name_ScreenDisplay">屏触智慧信发</string>
+    <string name="app_name_expt">专家抽选系统</string>
+
+
+    <string name="zxing_msg_camera_framework_bug">确认</string>
+
+</resources>

@@ -1,0 +1,31 @@
+<resources>
+
+    <style name="Widget.Theme.CyberWinOSAnd.ActionBar.Fullscreen" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/black_overlay</item>
+    </style>
+
+    <style name="Widget.Theme.CyberWinOSAnd.ButtonBar.Fullscreen" parent="">
+        <item name="android:background">@color/black_overlay</item>
+        <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
+    </style>
+
+
+    <style name="TransparentDialogTheme" parent="Theme.AppCompat.Dialog">
+        <!--
+        <item name="android:windowBackground">@android:color/transparent</item>
+        -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.85</item> <!-- 调整这个值来控制半透明度，0 为完全透明，1 为完全不透明 -->
+
+        <item name="android:windowMinWidthMajor">500dp</item> <!-- 设置最小宽度 -->
+        <item name="android:windowMinWidthMinor">500dp</item> <!-- 设置最小宽度 -->
+        <item name="android:textColorPrimary">#673AB7</item> <!-- 主要文字颜色，通常用于标题等 -->
+        <item name="android:textColorSecondary">#03A9F4</item> <!-- 次要文字颜色，通常用于辅助文本等 -->
+        <item name="android:textColorHint">#03A9F4</item> <!-- 提示文字颜色 -->
+        <item name="android:background">@drawable/rounded_dialog_background</item> <!-- 新增这一行，引用圆角背景 -->
+    </style>
+</resources>

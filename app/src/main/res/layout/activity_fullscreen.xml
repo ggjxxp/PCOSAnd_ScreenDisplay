@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/fullscreenBackgroundColor"
+    android:theme="@style/ThemeOverlay.CyberWinOSAnd.FullscreenContainer"
+    tools:context=".FullscreenActivity">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+    <TextView
+        android:id="@+id/fullscreen_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:keepScreenOn="true"
+        android:text="@string/dummy_content"
+        android:textColor="?attr/fullscreenTextColor"
+        android:textSize="50sp"
+        android:textStyle="bold" />
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/cyberwin_ly_toolbars"
+                android:layout_width="65dp"
+                android:layout_height="fill_parent"
+                android:onClick="cyberwin_lyaoutbtn_leftshownow"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+
+
+                    android:gravity="bottom|center|top"
+                    android:background="@raw/logo_ye"
+                     />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#ffffff"
+                    android:text="屏触" />
+<!--
+                <Button
+                    android:id="@+id/workflow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="cyberwin_lyaoutbtn_appstart"
+                    android:text="开始"
+                    tools:visibility="gone"
+                    />
+                -->
+
+
+                <Button
+                    android:id="@+id/cusapphome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="cyberwin_lyaoutbtn_cusapphome"
+                    android:text="主页" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="cyberwin_lyaoutbtn_wlzcappcenter"
+                    android:text="应用" />
+<!--
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="cyberwin_lyaoutbtn_wlzcmgrlogout"
+                    android:text="注销"
+                    tools:visibility="gone" />
+                -->
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="cyberwin_lyaoutbtn_exitapp"
+                    android:text="退出" />
+
+                <Button
+                    android:id="@+id/button5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="cyberwin_lyaoutbtn_setting"
+                    android:text="设置" />
+
+                <Button
+                    android:id="@+id/button4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="cyberwin_lyaoutbtn_changelefthide"
+                    android:text="隐藏" />
+
+            </LinearLayout>
+
+            <WebView
+                android:id="@+id/cwpd_webview"
+                android:layout_width="match_parent"
+
+                android:layout_height="fill_parent">
+
+            </WebView>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</FrameLayout>
