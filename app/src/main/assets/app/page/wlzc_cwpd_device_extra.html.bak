@@ -1,0 +1,217 @@
+<htmL>
+<style>
+
+html, body, div, p, ul, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, form, input, select, button, textarea, iframe, table, th, td {
+	margin: 0;
+	padding: 0;
+	border-spacing:0px !important;
+	outline:medium;
+	word-break:break-word;
+	border:none;
+	list-style:none;
+}
+body{
+ display:inline; 
+ text-align:center
+border:0px solid #000;
+color:#000000;
+ 
+     background:url('../main_img/desktop_1.jpg');
+ 
+    
+    background-size: cover;
+
+	 /*鼠标*/
+ -webkit-touch-callout: none; 
+ -webkit-user-select: none;  
+ -khtml-user-select: none; 
+ -moz-user-select: none; 
+ -ms-user-select: none; 
+ user-select: none;
+
+ background-repeat: no-repeat;
+ 
+  background-attachment: fixed;
+
+}
+
+input {
+background:url('../main_img/button_normal.9.png');
+color:#ff8f40;
+font-size:14pt;
+width:90px;
+height:50px;
+/*
+ -webkit-background-size: cover !important;
+    -moz-background-size: cover !important;
+    -o-background-size: cover !important;
+	
+    background-size: cover !important;
+	*/
+	 -webkit-background-size: 90px 48px; background-repeat:no-repeat; 
+    -moz-background-size: 90px 48px; background-repeat:no-repeat; 
+    -o-background-size: 90px 48px; background-repeat:no-repeat; 
+	 background-size:90px 48px; background-repeat:no-repeat; 
+
+
+}
+
+btn_back
+{
+background:url('../main_img/toolbar_back_normall.png');
+color:#ff8f40;
+font-size:14pt;
+width:90px;
+height:50px;
+/*
+ -webkit-background-size: cover !important;
+    -moz-background-size: cover !important;
+    -o-background-size: cover !important;
+	
+    background-size: cover !important;
+	*/
+	 -webkit-background-size: 90px 48px; background-repeat:no-repeat; 
+    -moz-background-size: 90px 48px; background-repeat:no-repeat; 
+    -o-background-size: 90px 48px; background-repeat:no-repeat; 
+	 background-size:90px 48px; background-repeat:no-repeat; 
+}
+
+.canvas{
+		border:1px solid black;
+		/*位置绝对*/
+		position: absolute;
+		top: 0;
+		left: 110;
+		/*设置所在层数，在上层*/
+		z-index: 1;
+	}
+	.canvas_bgp{
+		width: 1366px;
+		height: 414px;
+		/*位置绝对*/
+		position: absolute;
+		top: 0;
+		left: 110;
+	}
+	.btn_groud_css{
+	     margin-top:60px;
+		 
+	    width: 94%;
+		height: 200px;
+		left: 3%;
+		/*位置绝对*/
+		position: absolute;
+		top: 0;
+		
+		/*left: 110;*/
+	}
+</style>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width"/>
+
+<body>
+ 
+<!--
+<canvas id="canvas1" class="canvass" width="1366" height="300"></canvas>
+-->
+<!--<img src="desktop_1.jpg" class="canvas_bgp1">-->
+<div class="btn_groud_css">
+<center>
+<h2 style="color:#000;">设备测试</h2>
+ 
+
+ 
+<br><br>
+<p class="btn_login" style="background:#fffffde4;background-size:90px 47px;color:#000000;">
+  文本<input type="txt" value="客服08748970299" class="login_btn" id="txt_msg"  name="txt_msg"  style=" border:0px solid;background:url('../main_img/editview_bk_image.9.png');background-size:240px 48px;width:240px;"  />
+<br>
+     
+
+  <input type="button" value="语音朗读" class="login_btn" onClick="javascript:speak();"    />
+    <input type="button" value="老年人通讯录" class="login_btn" onClick="javascript:settotxl();"    />
+  
+  <input type="button" value="创建桌面方式" class="login_btn" onClick="javascript:createcontest('test_print_select');"    />
+   <input type="button" value="就餐叫号" class="login_btn" onClick="javascript:canyin('');"    />
+  <input type="button" value="收款" class="login_btn" onClick="javascript:sk('');"    />
+    <input type="button" value="业务办理" class="login_btn" onClick="javascript:ywbl('');"    />
+
+
+ 
+
+ <p class="btn_login" style="background:#fffffde4;background-size:90px 47px;color:#000000;">
+ <input type="button" value="读取通讯录" class="login_btn" onClick="javascript:readtxl('');"    />
+  <input type="button" value="读取短信" class="login_btn" onClick="javascript:readsms('');"    />
+   <input type="button" value="读取通话记录" class="login_btn" onClick="javascript:readcalllog('');"    />
+ </p>
+
+ 	<img src="../main_img/toolbarbkimagee.png" style="height:30px;width:100%;">
+<p class="btn_login">
+  
+   <textarea style="width:300px;height:134px;" name="demo" id="demo" >
+ 
+</textarea>
+	</div>
+
+<!--安卓系统菜单2-->
+<script src="../js/jquery-1.8.3.min.js"></script>
+ 
+
+
+<!--安卓系统菜单2-->
+<script type="text/javascript" src="../cyber_appext_config.js"></script>
+
+<script type="text/javascript">
+// setSoftVer('getUsbDevice');
+function speak(){
+    var txt_msg=$("#txt_msg").val();
+   var ret= Cyber_JsPrinterStandard.speakText(txt_msg);
+   alert(ret);
+  }
+
+  function readtxl(){
+ 
+	  var txt_cont = Cyber_JsPrinterStandard.cyber_readContacts("","");
+	  $("#demo").val(txt_cont);
+  }
+   function readcalllog(){
+ 
+	  var txt_cont = Cyber_JsPrinterStandard.cyber_readCallLog("","1","50");
+	  $("#demo").val(txt_cont);
+  }
+   function readsms(){
+ 
+	  var txt_cont = Cyber_JsPrinterStandard.cyber_readPhoneMessage("","1","50");
+	  $("#demo").val(txt_cont);
+  }
+
+    function createcontest(){
+ 
+	  var txt_cont = Cyber_JsPrinterStandard.create_DesktopLink("测试通讯录","","com.ynwlzc.trade.framework.cwpdapp.and.ApplicationBrowserExtraActivity");
+	//  $("#demo").val(txt_cont);/
+	 alert(txt_cont);
+  }
+
+  function settotxl(){
+	         CyberWin_JsStandardPlug.cwpd_system_set("APP","DefaultHome","file:///android_asset/app/app_Contacts/cyberwin_app.html","20225578-2019");
+			   alert("设置完成，请重启");
+			    CyberWin_JsStandardPlug.cwpdAppExit();
+	  }
+
+	  function ywbl(){
+    var txt_msg="A01";
+   var ret= Cyber_JsPrinterStandard.Work_PlayBLYW(txt_msg);
+   //alert(ret);
+  }
+  function canyin(){
+    var txt_msg="B03";
+   var ret= Cyber_JsPrinterStandard.Dish_PlayQueueCall(txt_msg);
+  // alert(ret);
+  }
+  function sk(){
+    var txt_msg="微信收款965.83";
+   var ret= Cyber_JsPrinterStandard.PlayMent_PlayMoney(txt_msg);
+  // alert(ret);
+  }
+</script>
+ </body>
+</html>

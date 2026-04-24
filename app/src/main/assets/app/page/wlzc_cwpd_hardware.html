@@ -1,0 +1,219 @@
+<htmL>
+<style>
+
+html, body, div, p, ul, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, form, input, select, button, textarea, iframe, table, th, td {
+	margin: 0;
+	padding: 0;
+	border-spacing:0px !important;
+	outline:medium;
+	word-break:break-word;
+	border:none;
+	list-style:none;
+}
+body{
+ display:inline; 
+ text-align:center
+border:0px solid #000;
+
+ 
+     background:url('../main_img/desktop_1.jpg');
+ 
+    
+    background-size: cover;
+
+	 /*鼠标*/
+ -webkit-touch-callout: none; 
+ -webkit-user-select: none;  
+ -khtml-user-select: none; 
+ -moz-user-select: none; 
+ -ms-user-select: none; 
+ user-select: none;
+
+ background-repeat: no-repeat;
+ 
+  background-attachment: fixed;
+
+}
+
+input {
+background:url('../main_img/button_normal.9.png');
+color:#ff8f40;
+font-size:14pt;
+width:90px;
+height:50px;
+/*
+ -webkit-background-size: cover !important;
+    -moz-background-size: cover !important;
+    -o-background-size: cover !important;
+	
+    background-size: cover !important;
+	*/
+	 -webkit-background-size: 90px 48px; background-repeat:no-repeat; 
+    -moz-background-size: 90px 48px; background-repeat:no-repeat; 
+    -o-background-size: 90px 48px; background-repeat:no-repeat; 
+	 background-size:90px 48px; background-repeat:no-repeat; 
+
+
+}
+
+btn_back
+{
+background:url('../main_img/toolbar_back_normall.png');
+color:#ff8f40;
+font-size:14pt;
+width:90px;
+height:50px;
+/*
+ -webkit-background-size: cover !important;
+    -moz-background-size: cover !important;
+    -o-background-size: cover !important;
+	
+    background-size: cover !important;
+	*/
+	 -webkit-background-size: 90px 48px; background-repeat:no-repeat; 
+    -moz-background-size: 90px 48px; background-repeat:no-repeat; 
+    -o-background-size: 90px 48px; background-repeat:no-repeat; 
+	 background-size:90px 48px; background-repeat:no-repeat; 
+}
+
+.canvas{
+		border:1px solid black;
+		/*位置绝对*/
+		position: absolute;
+		top: 0;
+		left: 110;
+		/*设置所在层数，在上层*/
+		z-index: 1;
+	}
+	.canvas_bgp{
+		width: 1366px;
+		height: 414px;
+		/*位置绝对*/
+		position: absolute;
+		top: 0;
+		left: 110;
+	}
+	.btn_groud_css{
+	     margin-top:60px;
+		 
+	    width: 94%;
+		height: 200px;
+		left: 3%;
+		/*位置绝对*/
+		position: absolute;
+		top: 0;
+		
+		/*left: 110;*/
+	}
+</style>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width"/>
+
+<body>
+ 
+<!--
+<canvas id="canvas1" class="canvass" width="1366" height="300"></canvas>
+-->
+<!--<img src="desktop_1.jpg" class="canvas_bgp1">-->
+<div class="btn_groud_css">
+<center>
+<h2 style="color:#000;">硬件测试</h2>
+ 
+
+ 
+<br><br>
+<p class="btn_login" style="background:#fffffde4;background-size:90px 47px;color:#fff;">
+  IP/蓝牙/USB<input type="txt" value="192.168.1.198" class="login_btn" id="ip"  name="ip"  style=" border:0px solid;background:url('../main_img/editview_bk_image.9.png');background-size:240px 48px;width:240px;"  />端口
+   <input type="txt" value="" class="login_btn" id="port"  style=" border:0px solid;background:url('../main_img/editview_bk_image.9.png');background-size:90px 48px;"   /><br>
+   <input type="txt" value="测试打印内容" class="login_btn" id="printdata_s"  style=" border:0px solid;background:url('editview_bk_image.9.png');background-size:3000px 48px;width:300px;" /><br>
+
+   <input type="button" value="打印测试" class="login_btn" onClick="javascript:setSoftVer('test_print_net');"    />
+     <input type="button" value="测试厨房" class="login_btn" onClick="javascript:setSoftVer('test_print_net2');"    />
+
+	   <input type="button" value="测试模板" class="login_btn" onClick="javascript:setSoftVer('test_print_net_tmp');"    />
+
+
+  <input type="button" value="蓝牙" class="login_btn" onClick="javascript:setSoftVer('test_print_blue');"    />
+  <input type="button" value="USB" class="login_btn" onClick="javascript:setSoftVer('test_print_usb');"    />
+  <input type="button" value="打印机选择" class="login_btn" onClick="javascript:setSoftVer('test_print_select');"    />
+ 
+ </p>
+<p class="btn_login">
+<p class="btn_login" style="background:#fffffde4;background-size:90px 47px;color:#fff;">
+USB &nbsp; &nbsp;<select name="cwpdusbdevices" id="cwpdusbdevices" style="width:180px; height:48px; background:url('../main_img/button_normal.9.png');background-size:180px 48px; background-repeat:no-repeat; ">
+<option value="-1|0">请选择USB</option>
+</select>
+ <input type="button" value="设置默认USB打印" class="login_btn" onClick="javascript:setSoftVer('setDefault_usb');"   style="width:180px;background:url('../main_img/button_normal.9.png');background-size:180px 48px; background-repeat:no-repeat; "  />
+<br><br> 
+ </p>
+
+
+ <p class="btn_login">
+    <input type="button" value="测试读取串口数据" class="login_btn" onClick="javascript:setSoftVer('get_serial');"   style="width:180px;background:url('../main_img/button_normal.9.png');background-size:180px 48px; background-repeat:no-repeat; "  />
+
+	 <input type="button" value="测试打印标签" class="login_btn" onClick="Cyber_JsPrinterStandard.cyber_printlabeltest();"   style="width:180px;background:url('../main_img/button_normal.9.png');background-size:180px 48px; background-repeat:no-repeat; "  />
+<br><br> 
+<br><br> 
+ </p>
+
+
+
+ 	<img src="../main_img/toolbarbkimagee.png" style="height:30px;width:100%;">
+<p class="btn_login">
+<p class="btn_login" style="background:#fffffde4;background-size:90px 47px;color:#fff;">
+高级打印 &nbsp; &nbsp;模板<select name="print_tmp" id="print_tmp" style="width:180px; height:48px; background:url('../main_img/button_normal.9.png');background-size:180px 48px; background-repeat:no-repeat; ">
+<option value="-1|0">请选择模板</option>
+<option value="testmix">test混合</option>
+<option value="order">订单</option>
+<option value="pos">pos</option>
+
+</select>
+接口 &nbsp; &nbsp;<select name="print_interface" id="print_interface" style="width:180px; height:48px; background:url('../main_img/button_normal.9.png');background-size:180px 48px; background-repeat:no-repeat; ">
+<option value="-1|0">请选择接口方式</option>
+<option value="usb">USB</option>
+<option value="net">网络</option>
+<option value="http">网络</option>
+<option value="blue">蓝牙</option>
+<option value="driver">驱动</option>
+<option value="serial">串口</option>
+</select>
+ <input type="button" value="打印" class="login_btn" onClick="javascript:setSoftVer('print_newall');"   style="width:100px;background:url('../main_img/button_normal.9.png');background-size:100px 48px; background-repeat:no-repeat; "  />
+  <input type="button" value="设置模板" class="login_btn" onClick="javascript:setSoftVer('print_settmp');"   style="width:100px;background:url('../main_img/button_normal.9.png');background-size:100px 48px; background-repeat:no-repeat; "  />
+
+   <input type="button" value="读取模板" class="login_btn" onClick="javascript:setSoftVer('print_gettmp');"   style="width:100px;background:url('../main_img/button_normal.9.png');background-size:100px 48px; background-repeat:no-repeat; "  />
+ </p>
+
+   <textarea style="width:300px;height:134px;">
+设备地址案例
+蓝牙：DC:0D:30:7E:8E:8D 
+IP：192.168.1.198:port
+usb verdor>prodid>name
+wifi打印机：IP
+4G打印机：未来之窗云设备ID
+公版音箱：未来之窗云设备ID
+串口：tty1
+</textarea>
+   <textarea style="width:300px;height:134px;" name="print_tmp_data" id="print_tmp_data" >
+<?xml  version="1.0" ?><root><cyber_property line_count="10"></cyber_property><cyber_printdata><l0  alignment="1" font_size="2" isBold="1" underline="0" nextLine="3">第1行</l0><l1  alignment="2" font_size="2" isBold="1" underline="0" nextLine="2">第2行</l1><l2 alignment="2" font_size="2" isBold="1" underline="0" nextLine="2">第3行订单号：[orderid]</l2><l3 alignment="3" font_size="2" isBold="1" underline="0" nextLine="2">第4行</l3><l4 alignment="2" font_size="2" isBold="1" underline="0" nextLine="2">第5行</l4></cyber_printdata></root>
+</textarea> 
+
+ 
+  
+
+	</center>	 
+
+	</div>
+
+<!--安卓系统菜单2-->
+<script src="../js/jquery-1.8.3.min.js"></script>
+ 
+
+
+<!--安卓系统菜单2-->
+<script type="text/javascript" src="../cyber_appext_config.js"></script>
+
+<script type="text/javascript">
+ setSoftVer('getUsbDevice');
+</script>
+ </body>
+</html>
