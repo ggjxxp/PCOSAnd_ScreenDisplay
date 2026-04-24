@@ -1,0 +1,237 @@
+//大屏幕 按键 ，智能电视 + 酒店房价牌 +展示大屏幕 +支付
+ var control_keyEvent=true;
+ var 未来之窗智能硬件_键盘_平台 = "";//hotel_roomprice ,face_pay_self , smart_lock_self, wlzc_smart_vos ,screen_hotel
+
+ var 未来之窗选中样式=`<style>
+   .lecture_select{
+     /*border: 5px solid red; 强制*/
+	 border:5px solid red !important;
+   }
+   </style> `;
+   document.write(未来之窗选中样式);
+
+   var keyboard模式="key";//对话框模式 放大模式 ，key模式 cyberdialog ,cyber_confirm(1-2)
+   //非 key 模式 +1000
+
+
+   //定义页面序号
+    var lecture_index_now  = 0 ;
+	var lecture_index_count=7;
+	var lecture_index_now_location={x:0,y:0,w:0,h:0};
+	var lecture_now_showbig = false;
+
+
+	 $(document).keydown(function (event) { 
+		// alert(event.keyCode); 
+		 //alert(String.fromCharCode(event.keyCode));
+		 if (event.ctrlKey && event.keyCode == 13) { 
+			   //alert('Ctrl+Enter'); 
+		}; 
+
+             //回退 
+			 if(event.keyCode == 8){
+				  // alert("支付");
+				   
+				 
+					 
+					return false;
+	 
+			 }
+			 if(event.keyCode == 13){
+				  // alert("支付");
+
+				  if(lecture_index_now==0){
+					  return;
+				  }
+
+				   
+             //2023-4-22 修订
+			 // $(".cl_handle_lecture_obj_"+lecture_index_now).click();
+
+			 if( keyboard模式=="key"){
+				  $(".cl_handle_lecture_obj_"+lecture_index_now).click();
+			   }
+
+			   if( keyboard模式=="cyber_confirm"){
+				   $(".cl_handle_lecture_objc_"+lecture_index_now).click();
+			   }
+
+			   if( keyboard模式=="cyberdialog"){
+				   var 对框框叠加 =1000+lecture_index_now;
+				   $(".cl_handle_lecture_objd_"+对框框叠加).click();
+			   }
+				
+					 return ;
+
+				 // cyber_facepaywexin_payonly();
+				// cpwd_query_member_info();
+				//var cybermoney=$cq("#number_or_name_member").val();
+				//alert(cybermoney);
+
+				if(cybermoney==""){
+					Cyber_JsPrinterStandard.speakText(" 输入无效");
+					return;
+				}
+				if(cybermoney=="0"){
+					Cyber_JsPrinterStandard.speakText(" 输入无效");
+					return;
+				}
+
+
+				 cyberwin_local_app_go();
+	 
+			 }else{
+				 if(event.keyCode == 144){
+					 //青蛙键盘消除
+					 return ;
+				 }
+
+				 
+		     }
+
+			//  $(".cl_handle_lecture_obj_"+lecture_index_now).removeClass("lecture_select");
+
+			  //2023-4-22 修订
+			  
+			 if( keyboard模式=="key"){
+				  
+				   $(".cl_handle_lecture_obj_"+lecture_index_now).removeClass("lecture_select");
+			   }
+
+			   if( keyboard模式=="cyber_confirm"){
+				   $(".cl_handle_lecture_objc_"+lecture_index_now).removeClass("lecture_select");
+			   }
+
+			   if( keyboard模式=="cyberdialog"){
+				   var 对框框叠加 =1000+lecture_index_now;
+				   $(".cl_handle_lecture_objd_"+对框框叠加).removeClass("lecture_select");
+			   }
+
+			 switch (event.keyCode) {
+				 case 37:
+				 {
+					// alert('方向键-左');
+					 if( keyboard模式=="key"){
+						 lecture_index_now = lecture_index_now -1;
+					 }
+					  if( keyboard模式=="cyber_confirm"){
+						 lecture_index_now = lecture_index_now -1;
+					 }
+					  if( keyboard模式=="cyberdialog"){
+						 lecture_index_now = lecture_index_now -1;
+					 }
+					 
+				 }
+				 break;
+				 case 38:
+				 {
+					 //alert('方向键-上');
+					  if( keyboard模式=="key"){
+						 lecture_index_now = lecture_index_now -1;
+					 }
+					  if( keyboard模式=="cyber_confirm"){
+						 lecture_index_now = lecture_index_now -1;
+					 }
+					  if( keyboard模式=="cyberdialog"){
+						 lecture_index_now = lecture_index_now -1;
+					 }
+
+				 }
+				 break;
+				 case 39: 
+				 {
+					// alert('方向键-右'); 
+					  if( keyboard模式=="key"){
+						 lecture_index_now = lecture_index_now +1;
+					 }
+					   if( keyboard模式=="cyber_confirm"){
+						 lecture_index_now = lecture_index_now +1;
+					 }
+					   if( keyboard模式=="cyberdialog"){
+						 lecture_index_now = lecture_index_now +1;
+					 }
+
+				 }
+				 break;
+				 case 40:
+				 {
+					// alert('方向键-下');
+					   if( keyboard模式=="key"){
+						 lecture_index_now = lecture_index_now +1;
+					  }
+					    if( keyboard模式=="cyber_confirm"){
+						 lecture_index_now = lecture_index_now +1;
+					  }
+					    if( keyboard模式=="cyberdialog"){
+						 lecture_index_now = lecture_index_now +1;
+					  }
+				 }
+				 break;
+				 //
+				 // top.location.href="wlzc_cwpd_login.html";
+				  case 4:
+				 {
+					// alert('方向键-下');
+					   if( keyboard模式=="key"){
+						 top.location.href="wlzc_cwpd_login.html";
+					  }
+				 }
+				 default:
+				 { 
+					 $(".nowkeycode").html(event.keyCode);
+					// alert(event.keyCode);
+				 }
+				  break;
+			};
+
+			if(lecture_index_count <= lecture_index_now){
+					  //lecture_index_now = lecture_index_count;
+			} 
+			if(lecture_index_count < lecture_index_now){
+					 // lecture_index_now = 1;
+					 lecture_index_now =1 ;
+			}
+			
+
+			if( lecture_index_now <= 0 ){
+					 // lecture_index_now = 0;
+					// ecture_index_now = lecture_index_count;
+			 }
+			 if( lecture_index_now < 1 ){
+					  
+					 lecture_index_now = lecture_index_count;
+			 }
+
+			console.log("当前==lecture_obj_"+lecture_index_now);
+
+			  if( keyboard模式=="cyber_confirm"){
+						if(lecture_index_now >2){
+							lecture_index_now =2;//不能超过按钮数字
+						}
+			   }
+			  if( keyboard模式=="cyberdialog"){
+				 
+			  }
+
+			   if( keyboard模式=="key"){
+				  $(".cl_handle_lecture_obj_"+lecture_index_now).addClass("lecture_select");
+			   }
+
+			   if( keyboard模式=="cyber_confirm"){
+				   console.log("当前确认==cl_handle_lecture_objc_"+lecture_index_now);
+
+				  $(".cl_handle_lecture_objc_"+lecture_index_now).addClass("lecture_select");
+			   }
+
+			   if( keyboard模式=="cyberdialog"){
+				   var 对框框叠加 =1000+lecture_index_now;
+				  
+				  $(".cl_handle_lecture_objd_"+对框框叠加).addClass("lecture_select");
+			   }
+
+
+			  
+
+				  
+});
+
