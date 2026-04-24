@@ -1,0 +1,352 @@
+<link href="./app/css/style_yellow.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script language="JavaScript" src="./app/js/jquery.js"></script>
+
+<script type="text/javascript">
+$(function(){	
+	//导航切换
+	//$(".menuson .header").click(function(){
+		/*
+		$(".menuson").click(function(){
+		var $parent = $(this).parent();
+		$(".menuson>li.active").not($parent).removeClass("active open").find('.sub-menus').hide();
+		
+		$parent.addClass("active");
+		if(!!$(this).next('.sub-menus').size()){
+			if($parent.hasClass("open")){
+				$parent.removeClass("open").find('.sub-menus').hide();
+			}else{
+				$parent.addClass("open").find('.sub-menus').show();	
+			}
+			
+			
+		}
+	});
+	*/
+
+   $(".menuson>li").click(function(){
+	  // alert("你点击了");
+	  $(".menuson>li.active").removeClass("active");
+	  $(this).addClass("active");
+	});
+	
+	// 三级菜单点击
+	$('.sub-menus li').click(function(e) {
+        $(".sub-menus li.active").removeClass("active")
+		$(this).addClass("active");
+    });
+	
+	$('.title').click(function(){
+		var $ul = $(this).next('ul');
+		$('dd').find('.menuson').slideUp();
+		if($ul.is(':visible')){
+			$(this).next('.menuson').slideUp();
+		}else{
+			$(this).next('.menuson').slideDown();
+		}
+	});
+})	
+</script>
+
+
+</head>
+
+<body style="background:#f0f9fd;">
+	
+
+
+
+	<div class="lefttop"><span></span></div>
+
+	<dl class="leftmenu">
+
+			<dd>
+				<div class="title">
+				<span><img src="./app/images/icon06.png" style="width:16px;" /></span> 系统设置				</div>
+					<ul class="menuson">
+						 
+					<li><cite></cite><a href="./app/page/wlzc_cwpd_hardware.html"   target="rightFrame">外设设置</a><i></i></li>
+					<li><cite></cite><a href="./app/page/wlzc_cwpd_hardware_printer.html"   target="rightFrame">打印机设置</a><i></i></li>
+				    <li><cite></cite><a href="./app/page/wlzc_cwpd_hardware_device.html"   target="rightFrame">设备参数</a><i></i></li>
+				 
+					<li><cite></cite><a href="./app/page/wlzc_cwpd_hardware_device_cache.html"   target="rightFrame">设备加速</a><i></i></li>
+
+					<li><cite></cite><a href="./app/page/wlzc_cwpd_device_extra.html"   target="rightFrame">系统扩展</a><i></i></li>
+
+						<li><cite></cite><a href="./app/page/wlzc_cwpd_hardware_labprinter.html"   target="rightFrame">标签打印设置</a><i></i></li>
+						
+					</ul>    
+				</dd><dd>
+
+				<div class="title">
+				<span><img src="./app/images/icon07.png" style="width:16px;" /></span> 版本选择				</div>
+					<ul class="menuson">
+						 
+					<li><cite></cite><a href="./app/page/wlzc_cwpd_software_ver.html"   target="rightFrame">全版本</a><i></i></li>
+					<li><cite></cite><a href="./app/page/wlzc_cwpd_software_ver_re.html"   target="rightFrame">零售</a><i></i></li>
+					<li><cite></cite><a href="./app/page/wlzc_cwpd_software_ver_dish.html"   target="rightFrame">餐饮娱乐</a><i></i></li>
+					<li><cite></cite><a href="./app/page/wlzc_cwpd_software_ver_gov.html"   target="rightFrame">事业单位</a><i></i></li>
+					<li><cite></cite><a href="./app/page/wlzc_cwpd_software_ver_industry.html"   target="rightFrame">行业专版</a><i></i></li>
+					<li><cite></cite><a href="./app/page/wlzc_cwpd_software_ver_pay.html"   target="rightFrame">支付版本</a><i></i></li>
+					</ul>    
+				</dd><dd>
+				 
+				 
+				 
+				<div class="title">
+				<span><img src="./app/images/leftico02.png" /></span> 服务支持				</div>
+					<ul class="menuson">
+						 
+						<li><cite></cite><a href="./app/page/wlzc_cwpd_qr.html"   target="rightFrame">手机管理</a><i></i></li>
+						<li><cite></cite><a href="http://support.ynwlzc.cn/"   target="rightFrame">服务支持</a><i></i></li>
+						<li><cite></cite><a href="./app/page/wlzc_cwpd_support_module.html"   target="rightFrame">组件测试</a><i></i></li>
+						<li><cite></cite><a href="https://51.onelink.ynwlzc.cn/o2o/client/set/cyberwininit.html"   target="_top">云端配置</a><i></i></li>
+						<li><cite></cite><a href="https://51.onelink.ynwlzc.cn/o2o/index.php/app/1"   target="_top">app安装</a><i></i></li>
+						<li><cite></cite><a href="https://51.onelink.ynwlzc.cn/o2o/client/set/cyberwinupdate.html"   target="rightFrame">系统更新</a><i></i></li>
+						<!--
+						 <li><cite></cite><a href="javascript:CyberWin_JsStandardPlug.cyber_test_ch34();"   target="rightFrame">ch34 调试</a><i></i></li>
+						  <li><cite></cite><a href="javascript:CyberWin_JsStandardPlug.cyber_test_lock2022();"   target="rightFrame">串口门锁</a><i></i></li>
+						  -->
+
+						    <li><cite></cite><a href="javascript:openface();"  >刷脸</a><i></i></li>
+							 <li><cite></cite><a href="javascript:openfacecy();"  >刷脸cy</a><i></i></li>
+							 <li><cite></cite><a href="javascript:openfacerec();"  >刷脸rec</a><i></i></li>
+
+							 <li><cite></cite><a href="javascript:openfacesign();"  >刷脸openfacesign</a><i></i></li>
+							<script>
+							   function openface(){
+								 //  alert("222");
+								      CyberWin_JsStandardPlug.cyberwinapp_aiot('openface');
+								   }
+
+								   function openfacecy(){
+								   alert("222");
+								      CyberWin_JsStandardPlug.cyberwinapp_aiot('openfacecy');
+								   }
+
+								    function openfacerec(){
+								       alert("openfacerec");
+								      CyberWin_JsStandardPlug.cyberwinapp_aiot('facerec');
+								   }
+
+								   function openfacesign(){
+								       alert("openfacesign");
+								      CyberWin_JsStandardPlug.cyberwinapp_aiot('facesign');
+								   }
+							</script>
+
+						  <li><cite></cite><a href="./app/page/wlzc_cwpd_testset_lockers.html"   target="rightFrame">储物柜锁</a><i></i></li>
+						<li><cite></cite><a href="./app/page/wlzc_cwpd_offline_devices.html"   target="rightFrame">负载技术</a><i></i></li>
+             		</ul>    
+				</dd><dd> 
+				
+
+				<div class="title"><span><img src="./app/images/icon11.png"  style="width:16px;" /></span> 系统安全</div>
+					  <ul class="menuson">
+						 
+						<li><cite></cite><a href="./app/page/wlzc_cwpd_qr.html"   target="rightFrame">数字证书</a><i></i></li>
+					 
+             		</ul>   
+					
+				</dd><dd> 
+
+				<div class="title"><span><img src="./app/images/icon08.png" style="width:16px;"/></span> 食品安全</div>
+					  <ul class="menuson">
+					  <li><cite></cite><a href="javascript:alert('本地区未开通');"   target="rightFrame">进货记录</a><i></i></li>
+					   <li><cite></cite><a href="javascript:alert('本地区未开通');"   target="rightFrame">废弃物处理</a><i></i></li>
+					  <li><cite></cite><a href="javascript:alert('本地区未开通');"   target="rightFrame">经营设备安全</a><i></i></li>
+					  <li><cite></cite><a href="javascript:alert('本地区未开通');"   target="rightFrame">食品流通</a><i></i></li>
+
+						 
+					
+					 
+             		</ul>   
+					
+				</dd><dd> 
+
+					<div class="title">
+				<span><img src="./app/images/icon07.png" style="width:16px;" /></span> 系统扩展			</div>
+					<ul class="menuson">
+						 
+					<li><cite></cite><a href="./app/app_Contacts/cyberwin_app.html"   target="_top">通讯录</a><i></i></li>
+					<li><cite></cite><a href="javascript:alert('本地区未开通');"     >浏览器</a><i></i></li>
+					 
+					</ul>    
+				</dd><dd>
+
+
+				<div class="title"><span><img src="./app/images/icon11.png"  style="width:16px;" /></span> 直播</div>
+					  <ul class="menuson">
+						 
+						<li><cite></cite><a href=" javascript:CyberWin_JsStandardPlug.cyber_openvideoplayertest('','');"   target="rightFrame">直播测试</a><i></i></li>
+
+						<li><cite></cite><a href="http://51.onelink.ynwlzc.cn/o2o/index.php/ApplicationclientAPI/PageStroreDefault?client_uuid=00000000-4a9f-afcd-4a9f-afcd00000000"   target="_top">性能测试</a><i></i></li>
+
+						<li><cite></cite><a href="http://51.onelink.ynwlzc.cn/o2o/index.php/ApplicationclientAPI/PageStroreDefaultV3?client_uuid=00000000-4a9f-afcd-4a9f-afcd00000000"   target="_top">性能测试V3</a><i></i></li>
+
+						<li><cite></cite><a href="javascript:CyberWin_JsStandardPlug.cwpdPlayMedia('http://hls.open.ys7.com/openlive/0c444bd4a6a147a486328f16c27eb8ad.m3u8','居中直播');"   target="rightFrame">居中海康直播</a><i></i></li>
+
+						<li><cite></cite><a href="javascript:CyberWin_JsStandardPlug.cwpdPlayMedia('rtsp://admin:@192.168.5.108:554','普通监控');"   target="rightFrame">普通监控</a><i></i></li>
+
+						<li><cite></cite><a href="javascript:CyberWin_JsStandardPlug.cwpdPlayMedia('http://www.ynwlzc.net/gw/video/siss.mp4','居中视频');"   target="rightFrame">居中视频</a><i></i></li>
+
+						
+						<li><cite></cite><a href="javascript:CyberWin_JsStandardPlug.cwpdPlayMediaPos('http://hls.open.ys7.com/openlive/0c444bd4a6a147a486328f16c27eb8ad.m3u8','居中直播','0','3','0.3','0.4');"   target="rightFrame">居中海康直播pos3</a><i></i></li>
+
+
+					 
+             		</ul>   
+					
+				</dd><dd> 
+
+
+				<div class="title"><span><img src="./app/images/icon11.png"  style="width:16px;" /></span> 硬件工具</div>
+					  <ul class="menuson">
+						 
+					 
+
+						<li><cite></cite><a href="./app/page/wlzc_cwpd_hardware_海信设备.html"   target="rightFrame">海信设备</a><i></i></li>
+
+					 
+
+
+					 
+             		</ul>   
+					
+				</dd><dd> 
+
+
+
+				<div class="title"><span><img src="./app/images/icon11.png"  style="width:16px;" /></span> 测试</div>
+					  <ul class="menuson">
+						 
+						<li><cite></cite><a href="file://external_files/storage/emulated/0/Tencent/QQfile_recv/%E9%A6%96%E9%A1%B5-%E6%9F%90%E6%9F%90%E6%94%BF%E4%BC%81%E4%BF%A1%E6%81%AF%E7%BD%91.html"   target="rightFrame">本地地址</a><i></i></li>
+
+						<li><cite></cite><a href="file://external_files/storage/emulated/0/gcxx.html"   target="rightFrame">本地地址2-Rgcxx</a><i></i></li>
+
+						<li><cite></cite><a href="javascript:CyberWin_JsStandardPlug.cwpdPlayMediaPos('file://external_files/storage/emulated/0/Tencent/QQfile_recv/gcxx.mp4','居中直播','0','3','0.3','0.4');"   target="rightFrame">本地视频</a><i></i></li>
+
+
+						<!--2022-3-1-->
+						<li><cite></cite><a href="javascript:tesp();"  >标签打印测试APP</a><i></i></li>
+						<li><cite></cite><a href="javascript:cyberprinterinitlab();"  >初始化打印机</a><i></i></li>
+
+						<li><cite></cite><a href="javascript:cyberprinterlab();"  >标签打印测试</a><i></i></li>
+						<li><cite></cite><a href="javascript:cyberselectbluetooth();"  >蓝牙打印机</a><i></i></li>
+						<li><cite></cite><a href="javascript:cyberbluetoothcurrent();"  >系统配置蓝牙</a><i></i></li>
+						<li><cite></cite><a href="javascript:inflatelog();"  >清空日志</a><i></i></li>
+						<li><cite></cite><a href="javascript:writelogtest();"  >日志测试</a><i></i></li>
+						<li><cite></cite><a href="./app/phoneforopen/phone_login.html"   target="_blank">手机主界面</a><i></i></li>
+
+					
+						
+						<script>
+						 function inflatelog(){
+							  //alert(1);
+							 // CyberWin_JsStandardPlug.cyber_device_SetblueboothAddress();
+							 var d= CyberWin_JsStandardPlug.cyber_log_DeleteAll();
+	                         
+						}
+						 function writelogtest(){
+							  //alert(1);
+							 // CyberWin_JsStandardPlug.cyber_device_SetblueboothAddress();
+							 var d= CyberWin_JsStandardPlug.log("测试","中文测试","日志内容");
+	                         
+						}
+
+						 function cyberbluetoothcurrent(){
+							  //alert(1);
+							 // CyberWin_JsStandardPlug.cyber_device_SetblueboothAddress();
+							 var d= CyberWin_JsStandardPlug.cwpd_system_get("printer","blue","20225578-2019");
+	                         alert("当前蓝牙mac："+d);
+						}
+						 function cyberselectbluetooth(){
+							  //alert(1);
+							  CyberWin_JsStandardPlug.cyber_device_SetblueboothAddress();
+						}
+						  function tesp(){
+							 // alert(1);
+							  CyberWin_JsStandardPlug.cyberxprintertest();
+							 }
+
+							  function cyberprinterinitlab(){
+								   CyberWin_JsStandardPlug.cyber_print_label_initServer("net","192.168.17.198");
+								 }
+
+							 function cyberprinterlab(){
+
+								 var   tmp = "<?xml  version=\"1.0\" ?><root>" +
+				                        "<cyber_property line_count=\"10\"></cyber_property>" +
+				                         "<cyber_printdata>" +
+										"<l0  alignment=\"1\" font_size=\"2\" isBold=\"1\" underline=\"0\" nextLine=\"3\">第1行</l0>" +
+										"<l1  alignment=\"2\" font_size=\"2\" isBold=\"1\" underline=\"0\" nextLine=\"2\">第2行</l1>" +
+										"<l2 alignment=\"2\" font_size=\"2\" isBold=\"1\" underline=\"0\" nextLine=\"2\">第3行订单号：[orderid]</l2>" +
+										"<l3 alignment=\"3\" font_size=\"2\" isBold=\"1\" underline=\"0\" nextLine=\"2\">第4行</l3>" +
+										"<l4 alignment=\"2\" font_size=\"2\" isBold=\"1\" underline=\"0\" nextLine=\"2\">第5行</l4>" +
+										"</cyber_printdata>" +
+										"</root>";
+								 //cyber_print_label_Print
+								 var printdata='<?xml version="1.0"?><root><print_type>取号</print_type><shopname>未来之窗</shopname><order_no>单号：P17021500003</order_no><bill_time>2022-03-07 10:31:44</bill_time><beizhu></beizhu><clerk_name>11</clerk_name><clerk_id>11</clerk_id><today_orderid_store>排队号:30 号</today_orderid_store><print_header>票价：10.00元</print_header><print_body>------------------支付方式:支付宝票券号码:77721646246256打印时间:2022-03-07 10:31:44------------------</print_body><print_footer></print_footer><order_detail></order_detail></root>';
+								
+								 CyberWin_JsStandardPlug.cyber_print_label_Print("net","192.168.17.198","",printdata,"cut");
+							}
+						</script>
+
+					 
+                  
+
+					 
+             		</ul>   
+					
+				</dd><dd> 
+
+	
+        </dl>
+    
+</body>
+</html>
+
+
+
+<script type="text/javascript"> 
+window.onload = function ()
+{
+	/*
+	var oMenu = document.getElementById("menu");
+	var aLi = oMenu.getElementsByTagName("li");
+	//加载后隐藏自定义右键菜单
+	oMenu.style.display = "none";
+	//菜单鼠标移入/移出样式
+	for (i = 0; i < aLi.length; i++)
+	{
+		//鼠标移入样式
+		aLi[i].onmouseover = function ()
+		{
+			this.className = "active"	
+		};
+		//鼠标移出样式
+		aLi[i].onmouseout = function ()
+		{
+			this.className = ""	
+		}
+	}
+	*/
+	//自定义菜单
+	document.oncontextmenu = function (event)
+	{
+		/*
+		var event = event || window.event;
+		var style = oMenu.style;
+		style.display = "block";
+		style.top = event.clientY + "px";
+		style.left = event.clientX + "px";
+		*/
+		return false;
+	};
+	//页面点击后自定义菜单消失
+	document.onclick = function ()
+	{
+		//oMenu.style.display = "none"	
+	}
+};
+</script>

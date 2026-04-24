@@ -1,0 +1,215 @@
+<htmL>
+<style>
+
+html, body, div, p, ul, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, form, input, select, button, textarea, iframe, table, th, td {
+	margin: 0;
+	padding: 0;
+	border-spacing:0px !important;
+	outline:medium;
+	word-break:break-word;
+	border:none;
+	list-style:none;
+}
+body{
+ display:inline; 
+ text-align:center
+border:0px solid #000;
+
+ 
+     background:url('desktop_1.jpg');
+ 
+    
+    background-size: cover;
+
+	 /*鼠标*/
+ -webkit-touch-callout: none; 
+ -webkit-user-select: none;  
+ -khtml-user-select: none; 
+ -moz-user-select: none; 
+ -ms-user-select: none; 
+ user-select: none;
+
+ background-repeat: no-repeat;
+ 
+  background-attachment: fixed;
+
+}
+
+input {
+background:url('button_normal.9.png');
+color:#ff8f40;
+font-size:14pt;
+width:90px;
+height:50px;
+/*
+ -webkit-background-size: cover !important;
+    -moz-background-size: cover !important;
+    -o-background-size: cover !important;
+	
+    background-size: cover !important;
+	*/
+	 -webkit-background-size: 90px 48px; background-repeat:no-repeat; 
+    -moz-background-size: 90px 48px; background-repeat:no-repeat; 
+    -o-background-size: 90px 48px; background-repeat:no-repeat; 
+	 background-size:90px 48px; background-repeat:no-repeat; 
+
+
+}
+
+btn_back
+{
+background:url('toolbar_back_normall.png');
+color:#ff8f40;
+font-size:14pt;
+width:90px;
+height:50px;
+/*
+ -webkit-background-size: cover !important;
+    -moz-background-size: cover !important;
+    -o-background-size: cover !important;
+	
+    background-size: cover !important;
+	*/
+	 -webkit-background-size: 90px 48px; background-repeat:no-repeat; 
+    -moz-background-size: 90px 48px; background-repeat:no-repeat; 
+    -o-background-size: 90px 48px; background-repeat:no-repeat; 
+	 background-size:90px 48px; background-repeat:no-repeat; 
+}
+
+.canvas{
+		border:1px solid black;
+		/*位置绝对*/
+		position: absolute;
+		top: 0;
+		left: 110;
+		/*设置所在层数，在上层*/
+		z-index: 1;
+	}
+	.canvas_bgp{
+		width: 1366px;
+		height: 414px;
+		/*位置绝对*/
+		position: absolute;
+		top: 0;
+		left: 110;
+	}
+	.btn_groud_css{
+	     margin-top:60px;
+		 
+	    width: 94%;
+		height: 200px;
+		left: 3%;
+		/*位置绝对*/
+		position: absolute;
+		top: 0;
+		
+		/*left: 110;*/
+	}
+</style>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width"/>
+
+<body>
+ 
+<div class="btn_groud_css">
+<center>
+ <h1>软件版本选择</h1>
+ <br>
+
+<p class="btn_login">
+<input type="button" value="麒麟区专版" class="login_btn" onClick="javascript:setSoftVer('shop_android');" style="width:140px;background:url('button_normal.9.png');background-size:140px 48px; background-repeat:no-repeat; " />
+<input type="button" value="马龙区活动专版" class="login_btn" onClick="javascript:setSoftVer('shop_android_frogs7');"  style="width:130px;background:url('button_normal.9.png');background-size:130px 48px; background-repeat:no-repeat; "  />
+
+<input type="button" value="天津市活动专版" class="login_btn" onClick="javascript:setSoftVer('shop_android_frogs7');"  style="width:130px;background:url('button_normal.9.png');background-size:130px 48px; background-repeat:no-repeat; "  />
+
+</p>
+ <br><br> 
+<p class="btn_login">
+<input type="button" value="标准版" class="login_btn" onClick="javascript:setSoftVer('shop_android');" />
+<input type="button" value="服装店" class="login_btn" onClick="javascript:setSoftVer('shop_android');"  />
+<input type="button" value="烘培店" class="login_btn" onClick="javascript:setSoftVer('shop_android');"  />
+<input type="button" value="奶茶店" class="login_btn" onClick="javascript:setSoftVer('shop_android');"  />
+<input type="button" value="鞋店" class="login_btn" onClick="javascript:setSoftVer('shop_android');"  />
+<input type="button" value="红酒零售" class="login_btn" onClick="javascript:setSoftVer('shop_android');"  />
+
+</p>
+
+<p class="btn_login">
+<input type="button" value="餐饮店" class="login_btn" onClick="javascript:setSoftVer('dish_normal');"  />
+<input type="button" value="快餐店" class="login_btn" onClick="javascript:setSoftVer('dish_fast');"   />
+<input type="button" value="手机版" class="login_btn" onClick="javascript:setSoftVer('shop_android_phone');"   />
+
+<input type="button" value="会员终端" class="login_btn" onClick="javascript:setSoftVer('shop_android_member');"   />
+<!--
+<input type="button" value="自助取票" class="login_btn" onClick="javascript:setSoftVer('shop_android_frogs7');"   />
+-->
+</p>
+ 
+ <br><br> 
+
+  <p class="btn_login">
+ 
+<input type="button" value="美容美发" class="login_btn" onClick="javascript:setSoftVer('cashier_Industry_beauty');"   />
+ <input type="button" value="酒店专用" class="login_btn" onClick="javascript:setSoftVer('cashier_Industry_beauty');"   />
+
+
+
+ 
+</p>
+
+ <p class="btn_login">
+ 
+<input type="button" value="成都青蛙" class="login_btn" onClick="javascript:setSoftVer('dish_fast_frogs7');"   />
+<input type="button" value="青蛙快餐" class="login_btn" onClick="javascript:setSoftVer('dish_fast_frogs7x400');"   />
+
+
+<input type="button" value="自助取票" class="login_btn" onClick="javascript:setSoftVer('shop_android_frogs7');"   />
+</p>
+ 
+ <br><br> 
+
+ 
+  <p class="btn_login">
+ 
+<input type="button" value="政府版本" class="login_btn" onClick="javascript:setSoftVer('EnterpriseEditionMember');"   />
+ <input type="button" value="事业单位版" class="login_btn" onClick="javascript:setSoftVer('EnterpriseEditionMember');"   />
+ <input type="button" value="企业版" class="login_btn" onClick="javascript:setSoftVer('EnterpriseEditionMember');"   />
+
+
+
+ 
+</p>
+
+ <p class="btn_login">
+<input type="button" value="人脸收款" class="login_btn" onClick="javascript:setSoftVer('shop_face_onlypay');"  />
+<input type="button" value="扫码收银" class="login_btn" onClick="javascript:setSoftVer('shop_cashier');"   />
+<input type="button" value="浮窗支付" class="login_btn" onClick="javascript:setSoftVer('payscanonly');"   />
+<input type="button" value="关闭浮窗" class="login_btn" onClick="javascript:setSoftVer('payscanonly_close');"   />
+
+ 
+ 
+
+<input type="button" value="手机管理" class="login_btn" onClick="javascript:setSoftVer('phone_qr');"   />
+
+<input type="button" value="退出系统" class="login_btn" onClick="javascript:setSoftVer('exit');"   /></p>
+<br><br> 
+<p class="btn_login">
+  
+
+ 
+  
+	<img src="toolbarbkimagee.png" style="height:30px;width:100%;">
+	</center>	 
+
+	</div>
+
+<!--安卓系统菜单2-->
+<script type="text/javascript" src="./app/cyber_appext_config.js"></script>
+
+
+
+
+
+
+ </body>
+</html>

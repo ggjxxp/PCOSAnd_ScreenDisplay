@@ -1,0 +1,562 @@
+<htmL>
+<style>
+
+html, body, div, p, ul, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, form, input, select, button, textarea, iframe, table, th, td {
+	margin: 0;
+	padding: 0;
+	border-spacing:0px !important;
+	outline:medium;
+	word-break:break-word;
+	border:none;
+	list-style:none;
+}
+body{
+ display:inline; 
+ text-align:center
+border:0px solid #000;
+
+ 
+     background:url('desktop_1.jpg');
+ 
+    
+    background-size: cover;
+
+	 /*鼠标*/
+ -webkit-touch-callout: none; 
+ -webkit-user-select: none;  
+ -khtml-user-select: none; 
+ -moz-user-select: none; 
+ -ms-user-select: none; 
+ user-select: none;
+
+ background-repeat: no-repeat;
+ 
+  background-attachment: fixed;
+
+}
+
+input {
+background:url('button_normal.9.png');
+color:#ff8f40;
+font-size:13pt;
+width:90px;
+height:50px;
+/*
+ -webkit-background-size: cover !important;
+    -moz-background-size: cover !important;
+    -o-background-size: cover !important;
+	
+    background-size: cover !important;
+	*/
+	 -webkit-background-size: 90px 48px; background-repeat:no-repeat; 
+    -moz-background-size: 90px 48px; background-repeat:no-repeat; 
+    -o-background-size: 90px 48px; background-repeat:no-repeat; 
+	 background-size:90px 48px; background-repeat:no-repeat; 
+
+
+}
+
+.canvas{
+		border:1px solid black;
+		/*位置绝对*/
+		position: absolute;
+		top: 0;
+		left: 110;
+		/*设置所在层数，在上层*/
+		z-index: 1;
+	}
+	.canvas_bgp{
+		width: 1366px;
+		height: 414px;
+		/*位置绝对*/
+		position: absolute;
+		top: 0;
+		left: 110;
+	}
+	.btn_groud_css{
+	     margin-top:20%;
+		 
+	    width: 94%;
+		height: 200px;
+		left: 3%;
+		/*位置绝对*/
+		position: absolute;
+		top: 0;
+		
+		/*left: 110;*/
+	}
+	cyberbtn{
+	 display:inline-block;
+	 line-height:60px;
+	 background:url(button_normal.9.png);
+	 background-size:cover;
+	}
+</style>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width"/>
+
+<body>
+<!--
+<canvas id="canvas1" class="canvass" width="1366" height="300"></canvas>
+-->
+<!--<img src="desktop_1.jpg" class="canvas_bgp1">-->
+<div class="btn_groud_css">
+<center>
+<!--<h2 style="color:#000;">未来之窗悠然收银 V6.7 </h2>
+-->
+
+<img src="wlzc_logo_yrzh.png">
+<BR><BR>
+<p class="btn_login">
+
+<cyberbtn type="button" value="进入工作台" class="login_btn cl_handle_lecture_obj_1" onClick="javascript:setSoftVer('cyberopenhome');"  style="width:100px;height:60px;background:url(button_normal.9.png);background-size:100px 60px; background-repeat:no-repeat; font-size:13pt;"  >进入工作台</cyberbtn>
+
+
+<cyberbtn type="button" value="酒店大屏幕" class="login_btn cl_handle_lecture_obj_2" onClick="javascript:hotel_screen();"  style="width:100px;height:60px;background:url(button_normal.9.png);background-size:100px 60px; background-repeat:no-repeat; font-size:13pt;" >酒店大屏幕</cyberbtn>
+
+
+
+
+
+
+<cyberbtn type="button" value="打印标签" class="login_btn cl_handle_lecture_obj_3" onClick="javascript:setSoftVer('cwpd_Label_printing');"  style="width:100px;height:60px;background:url(button_normal.9.png);background-size:100px 60px; background-repeat:no-repeat; font-size:13pt;"  >打印标签</cyberbtn>
+
+ 
+</p>
+
+ 
+
+<br><cyberdiv class="nowkeycode"></cyberdiv><br>
+	<img src="toolbarbkimagee.png" style="height:30px;width:100%;">
+ 
+<br><br><br><br><br><br><br><br><br><br><br>
+<p class="btn_login">
+
+<cyberbtn type="button" value="系统配置" class="login_btn cl_handle_lecture_obj_4" onClick="javascript:setSoftVer('wlzc_cwpd_frame_main');"  style="width:100px;"  >系统配置</cyberbtn>
+
+ 
+<cyberbtn type="button" value="自动登录" class="login_btn cl_handle_lecture_obj_5" onClick="javascript:setSoftVer('testlogin');"  style="width:100px;" >自动登录</cyberbtn>
+
+ 
+<cyberbtn type="button" value="乡村手机" class="login_btn cl_handle_lecture_obj_6" onClick="window.location='./app/app_Contacts/cyberwin_app_phoneset.html';" style="width:100px;"   />乡村手机</cyberbtn>
+<cyberbtn type="button" value="手机管理" class="login_btn cl_handle_lecture_obj_7" onClick="javascript:setSoftVer('phone_qr');"   style="width:100px;" >手机管理</cyberbtn>
+ 
+
+	<cyberbtn type="button" value="附近设备" class="login_btn cl_handle_lecture_obj_8" onClick="javascript:devicescanner();" style="width:100px;"   >附近设备</cyberbtn>
+		<script>
+ function devicescanner(){
+				//alert("openfacesign");
+			 CyberWin_JsStandardPlug.cyberwinapp_aiot('devicescanner');
+	 }
+</script>
+
+<cyberbtn type="button" value="自启动模式" class="login_btn cl_handle_lecture_obj_9" onClick="javascript:setapp();"  style="width:100px;height:60px;background:url(button_normal.9.png);background-size:100px 60px; background-repeat:no-repeat; font-size:13pt;" >自启动模式</cyberbtn>
+
+<cyberbtn type="button" value="激活配对" class="login_btn cl_handle_lecture_obj_10" onClick="javascript:setSoftConfigV2('APP','DefaultHome','https://51.onelink.ynwlzc.cn/o2o/index.php/ApplicationclientAPI/wlzcactiveall','未来之窗激活');"  style="width:100px;height:60px;background:url(button_normal.9.png);background-size:100px 60px; background-repeat:no-repeat; font-size:13pt;" >激活配对</cyberbtn>
+
+
+<cyberbtn type="button" value="手持终端" class="login_btn " onClick="javascript:openphonehandlepos();"  style="width:100px;height:60px;background:url(button_normal.9.png);background-size:100px 60px; background-repeat:no-repeat; font-size:13pt;" >手持终端</cyberbtn>
+
+<!--
+<cyberbtn type="button" value="退出系统" class="login_btn cl_handle_lecture_obj_11" onClick="javascript:closenavmenu('');"  style="width:100px;"  />
+隐藏</cyberbtn>
+
+
+
+<cyberbtn type="button"   class="login_btn cl_handle_lecture_obj_11" onClick="javascript:opendebug('');"  style="width:100px;"  />
+开启调试</cyberbtn>
+ 
+
+
+<cyberbtn type="button"   class="login_btn cl_handle_lecture_obj_11" onClick="javascript:hisenseprint('');"  style="width:100px;"  />
+海信</cyberbtn>
+-->
+<cyberbtn type="button" value="退出系统" class="login_btn cl_handle_lecture_obj_11" onClick="javascript:setSoftVer('exit');"  style="width:100px;"  />
+退出系统</cyberbtn>
+
+</p>
+<br><br>
+	<img src="toolbarbkimagee.png" style="height:30px;width:100%;">
+	</center>	 
+
+	</div>
+
+<!--安卓系统菜单2-->
+ 
+<script type="text/javascript">
+    function setSoftVer(ver){
+
+		 // var d= CyberWin_JsStandardPlug.cwpd_system_get("APP","DefaultHome","20225578-2019");
+	 // alert(d);
+
+		switch (ver) {
+		  case "shop_android":
+			{
+			  CyberWin_JsStandardPlug.cwpd_system_set("APP","DefaultHome","https://51.onelink.ynwlzc.cn//o2o/cyberwin_offline_store.php?g=MerchantV6&c=CyberWin_Store&a=Store_cashier_Qujing_android1000x650","20225578-2019");
+			   alert("设置完成，请重启");
+			    CyberWin_JsStandardPlug.cwpdAppExit();
+			}
+			break;
+			//shop_android_phone
+			 case "shop_android_phone":
+			{
+			  CyberWin_JsStandardPlug.cwpd_system_set("APP","DefaultHome","https://51.onelink.ynwlzc.cn//o2o/cyberwin_offline_store.php?g=MerchantV6&c=CyberWin_Store&a=Store_cashier_Qujing_phone","20225578-2019");
+			   alert("设置完成，请重启");
+			    CyberWin_JsStandardPlug.cwpdAppExit();
+			}
+			break;
+			case "shop_cashier":
+			{
+			  CyberWin_JsStandardPlug.cwpd_system_set("APP","DefaultHome","https://51.onelink.ynwlzc.cn//o2o/cyberwin_offline_store.php?g=MerchantV6&c=CyberWin_Store&a=Store_cashier_ClientPConlyPay","20225578-2019");
+			   alert("设置完成，请重启");
+			   CyberWin_JsStandardPlug.cwpdAppExit();
+			}
+			break;
+			case "shop_face_onlypay":
+			{
+			  CyberWin_JsStandardPlug.cwpd_system_set("APP","DefaultHome","https://51.onelink.ynwlzc.cn//o2o/cyberwin_offline_store.php?g=MerchantV6&c=CyberWin_Store&a=Store_cashier_Qujing_onlyPay","20225578-2019");
+			   alert("设置完成，请重启");
+			    CyberWin_JsStandardPlug.cwpdAppExit();
+			}
+			break;
+
+			case "dish_normal":
+			{
+			  CyberWin_JsStandardPlug.cwpd_system_set("APP","DefaultHome","https://51.onelink.ynwlzc.cn/o2o/store.php?g=Merchant&c=Store&a=cyberwin_dishDesktop","20225578-2019");
+			   alert("设置完成，请重启");
+			    CyberWin_JsStandardPlug.cwpdAppExit();
+			}
+			break;
+			case "dish_fast":
+			{
+			  CyberWin_JsStandardPlug.cwpd_system_set("APP","DefaultHome","https://51.onelink.ynwlzc.cn/o2o/store.php?g=Merchant&c=Store&a=cyberwin_dish_fastfoodmode","20225578-2019");
+			   alert("设置完成，请重启");
+			    CyberWin_JsStandardPlug.cwpdAppExit();
+			}
+			break;
+			case "testpay":
+			{
+				Cyber_JsPrinterStandard.cyber_net_test('https://51.onelink.ynwlzc.cn/o2o/cwpd_pay_pos.cwas/clienttype/andrid','POST','{"appid":"cwpd_pos","auth_code":"13694664664646848","device_sn":"merchant_vir_sn_77","messgae":"","out_trade_no":"157460657086594520191124224206","pay_action":"create","pay_type":"cyberwincloudpay","price":"1","version":"2"}');
+			}
+			break;
+
+			case "testlogin":
+			{
+				Cyber_JsPrinterStandard.cyber_showLogin();
+			}
+			break;
+
+			case "payscanonly":
+			{
+				 CyberWin_JsStandardPlug.cwpd_system_set("APP","show_window_payonly","1","20225578-2019");
+				  alert("设置完成，请重启");
+				   CyberWin_JsStandardPlug.cwpdAppExit();
+
+			}
+			break;
+			case "payscanonly_close":
+			{
+				 CyberWin_JsStandardPlug.cwpd_system_set("APP","show_window_payonly","0","20225578-2019");
+				  CyberWin_JsStandardPlug.cwpdAppExit();
+				  alert("设置完成，请重启");
+				   CyberWin_JsStandardPlug.cwpdAppExit();
+
+			}
+			break;
+			//payscanonly_close
+			//cyber_openhome
+			case "cyberopenhome":
+			{
+				 CyberWin_JsStandardPlug.cyber_openhome();
+
+			}
+			break;
+			case "cwpd_Label_printing":
+			{
+			 
+				  window.location.href="https://51.onelink.ynwlzc.cn/o2o/pos.php?g=Pos&c=ShopNew&a=cwpd_Label_printing&from=androidvos";
+
+			}
+			break;
+
+			case "exit":
+			{
+			 
+				   CyberWin_JsStandardPlug.cwpdAppExit();
+
+			}
+			break;
+			//phone_qr
+			case "phone_qr":
+			{
+			 
+				  window.location.href="./app/phoneforopen/phone_login.html";//"wlzc_cwpd_qr.html";
+
+			}
+			break;
+
+			//hardware
+			case "hardware":
+			{
+			 
+				  window.location.href="wlzc_cwpd_hardware.html";
+
+			}
+			break;
+			//software_ver
+           case "software_ver":
+			{
+			 
+				  window.location.href="wlzc_cwpd_software_ver.html";
+
+			}
+			break;
+				case "wlzc_cwpd_frame_main":
+			{
+			 
+				  window.location.href="wlzc_cwpd_frame_main.html";
+
+			}
+			break;
+
+			
+
+
+			//
+			default:
+				 break;
+     }
+
+
+	 // var d= CyberWin_JsStandardPlug.cwpd_system_get("APP","DefaultHome","20225578-2019");
+	 // alert(d);
+
+	  
+	 //   var d= CyberWin_JsStandardPlug.cwpd_system_get("APP","show_window_payonly","20225578-2019");
+	 // alert(d);
+	
+
+}
+
+function openphonehandlepos(){
+	 window.location.href="https://51.onelink.ynwlzc.cn/o2o/client/device_local_app/CyberTrade_Pos_gasStationV2023/cybewinapp.html";
+}
+
+function closenavmenu(){
+	 CyberWin_JsStandardPlug.device_Control("");
+}
+
+function opendebug(){
+	 CyberWin_JsStandardPlug.cwpd_system_set("APP","debug","1","20225578-2019");
+}
+
+function hisenseprint(){
+	 CyberWin_JsStandardPlug.print_histone("");
+}
+
+
+</script>
+<script>
+function cyberWin_Device_AIOT_Monitor(action,param){
+	// alert("类型："+action);
+	  alert(param);
+
+	  var 未来之窗json = eval("("+param+")");//转换为json对象
+	   alert(未来之窗json.id_dec);
+	  
+
+}
+</script>
+<script>
+var Canvas = {};
+Canvas.anim = {
+    //初始化
+    init: function() {
+        var canvas = document.getElementById('canvas');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        this.ctx = canvas.getContext('2d');
+        this.cw = canvas.width;
+        this.ch = canvas.height;
+        this.particles = [];
+        this.letters = 'ABCDEFGHIJKL未来之窗OP软件服务中心S塞忞XYZ';
+    },
+    //执行动画
+    render: function() {
+        //显示位置 
+        var particle = {
+            x: this.cw / 2,
+            y: this.ch,
+            character: this.letters[Math.floor(Math.random() * this.letters.length)],
+            xSpeed: (Math.random() * 20) - 10,
+            ySpeed: (Math.random() * 20) - 10,
+            color: [155, 100, 50, .7]
+        }
+        this.particles.push(particle);
+        this.drawparticles();
+    },
+    //绘制字母
+    drawparticles: function() {
+        this.fadeCanvas()
+        var particleCount = this.particles.length;
+        for (var i = 0; i < particleCount; i++) {
+            var particle = this.particles[i];
+            var h = particle.color[0],
+                s = particle.color[1] + '%',
+                l = particle.color[2] + '%',
+                a = particle.color[3];
+            var hsla = `hsla(${h},${s},${l},${a})`
+            this.ctx.font = '18px sans-serif';
+            this.ctx.fillStyle = hsla; //字体颜色
+
+            this.ctx.fillText(particle.character, particle.x, particle.y); //字体属性
+            particle.x += particle.xSpeed
+            particle.y += particle.ySpeed
+            particle.y *= 0.98;
+            particle.color[2] *= 0.99;
+            particle.color[0] += 1;
+            if (particle.color[0] > 253) {
+                particle.color[2] = 0;
+            }
+        }
+    },
+    //先清除画布
+    fadeCanvas: function() {
+        this.ctx.fillStyle = 'rgba(0,0,0,.3)'
+        this.ctx.fillRect(0, 0, this.cw, this.ch);
+    }
+}
+//Canvas.anim.init();
+//Canvas.anim.render();
+setInterval(function() {
+  //  Canvas.anim.render();
+}, 60)
+window.onresize = function() {
+  //  Canvas.anim.init();
+}</script>
+
+<script src="./app/js/jquery-1.9.0.min.js">
+</script>
+<script src="./app/js/cyberwin_hardware_keybord_all.js">
+</script>
+<script src="./app/js/CyberWin_APP_artDialog.js">
+</script>
+<script  >
+lecture_index_count=11;
+</script>
+<script>
+  function setapp(){
+	 // alert(11);
+	    CyberWin_JsStandardPlug.cwpd_system_set("APP","start_mode","app","20225578-2019");
+		alert("设置成功");
+  }
+
+  function hotel_screen(){
+	 // alert(11);
+	  //  CyberWin_JsStandardPlug.cwpd_system_set("APP","start_mode","app","20225578-2019");
+	//	alert("设置成功");
+	 window.location.href="  http://51.onelink.ynwlzc.cn/o2o/client/device_local_app/CyberTrade_hotelScreen_ecogenv2023/cybewinapp.html";
+  }
+
+   function setSoftConfigV2(sec,key,value,title){
+	   
+
+	 CyberWin_JsStandardPlug.cwpd_system_set(sec,key,value,"20225578-2019");
+	  var d= CyberWin_JsStandardPlug.cwpd_system_get(sec,key,"20225578-2019");
+	  alert("设置成功当前：:"+title);
+ }
+  
+</script>
+<script>
+var 用户协议 = `   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;为了更好的服务好您，请您阅读并须知一下内容
+<h3>软件适用范围</h3>
+1.本软件是针对商家开发的的一款软件
+<br>2.软件针对行业：酒店、奶茶店，餐饮店，服装店，ZB,企业，美容，民宿，社区，打印店，建材城，农贸市场，眼镜店，快餐店，母婴店，绿植花卉，初级农产品店，烘培店，电脑数码店，食品批发店，设备租赁店，婚纱影楼店，婚纱租赁，体育场馆，大厅展示，多电子屏互动，文印店，文具店，便利店，超市，专卖店，ktv展示，婚宴酒店展示，智能票务，自助排号，自助打印，打字学习 等37个行业
+<br>3.软件用于展览产品，用于展示企业产品信息
+<br>4.软件用于展服务，譬如酒店房价牌，zb最新价格
+<br>5.软件用于导引迎宾，譬如婚宴酒店用于展示今日客人指引信息
+<br>6.软件用于批量信息分发，譬如政务，政务大厅，批量分发屏幕信息，可独立控制单块屏幕
+<br>7.软件用于紧急通知，譬如食品安全，市场部可以将紧急信息立即分发给每块屏幕，支持语音，文字飘动
+<br>8.软件用于数字大屏幕，譬如智慧场馆，人流信息，入场人数统计
+<br>9.软件用于业务提醒，譬如自动排号，叫号，门诊排队，大厅取号
+<br>10.软件用于交互，譬如机房触摸查询设备运行状态，大厅查询机
+<br>11.软件用于系统查询，美发店查询自己客户信息
+<br>12.软件用于业务系统，譬如自助点餐，自助取电影票，自助打印
+<br>13.软件用于打字学习，可以给想练习打字的人群打字，接上键盘即可练习
+<h3>软件收费</h3>
+1.软件在电视端默认自带功能不收费
+<br>2.如果软件安装需要公司协助，并因此产生的服务成本，请自行协商一致，与软件本身无关
+<h3>用户隐私</h3>
+1.软件不会收取用户隐私信息譬如不收集电话，不收集电话姓名，不收集电话地址
+<br>2.软件不会弹出广告，软件在使用过程中，不会投放广告
+<br>3.软件会为了提高稳定性，兼容性，和使用体验，会收集，屏幕分辨率，操作系统版本，屏幕色彩，屏幕分辨率比例，以及本软件生成的调式日志
+<br>4.由于企业展示产品需要将图片存放到设备，因此，软件会使用本地磁盘，并要求您同意
+<br>5.软件在征得你的同意会将日志发送本公司服务器，因此需要您放行网络
+<br>6.在你需要用到蓝牙打印机时候，会提示您授权蓝牙
+<br>7.在你需要用到NFC读卡功能时候，会要求授权NFC权限
+<br>8.在你需要用摄像头识别二维码，系统会提醒你授权摄像头权限
+<h5>至此，您肯定已经详细阅读并已理解本协议，并同意严格
+遵守各条款和条件。</h5>
+
+<h4>软件协议</h4>
+最终用户许可协议
+
+本云中心服务,锁屏，CyberwinOS，未来之窗VOS，插件 等软件（属于赛忞办公软件系列）所有的版权属于来之窗软件服务中心
+本最终用户许可协议的最终解释权属于来之窗软件服务中心
+
+许可：
+　　来之窗软件服务中心 将本软件程序的使用权授予您。但您必须向
+来之窗软件服务中心 作以下保证：不在本协议规定的条款之外，使用、拷
+贝、修改、租赁或转让本系统或其中的任一部份。
+
+您保证：
+　　1.　只能由你本人或你代表的企业使用本系统；
+　　2.　为在这一台机器上使用，出于备份或档案管理的目
+的，以机器可读格式制作本系统的拷贝；
+　　3.　如果他方要使用本软件，必须向本司注册后并接受本协议才可使用
+　　如要转移使用权，对方必须接本协议，并向本公司提交使用权转移说明。
+　　4.　只在以下之一前提下，将本系统用于多用户环境或
+网络系统上：
+　　⊙本系统明文许可用于多用户环境或网络系统上；或者，
+　　⊙使用本系统的每一节点及终端都已购买使用许可。
+
+您保证不：
+　　1.　对本系统再次转让许可；
+　　2.　对本系统进行逆向工程、反汇编或解体拆卸；
+　　3.　拷贝或转交本系统的全部或部分，但本协议中明文
+        规定的除外。
+
+您将本系统或拷贝的全部或局部转手给另一使用方之时，
+您的许可权即自行终止。
+
+本系统的版权和所有权：
+　　本系统及其所有拷贝的名称，本系统及文档享有版权，并受国家版权法
+及国际协约条款的保护。您不可以从本软件中去掉其版权
+声明；并保证为本系统的拷贝（全部或部分）复制版权声
+明。您同意制止以任何形式非法拷贝本系统及文档。
+
+技术支持：
+　　本软件为免费软件，提供有限技术支持。为电话、电子邮件。
+
+概不负责：
+　　除上述之外，本系统不享受任何其他形式的售后担保。
+
+责任有限：
+　　本公司不承担任何因使用本系统不当造成的责任。
+
+许可终止：
+　　您若违返本协议的任一条款与条件，您将自动失去使用权。
+终止许可之时，您必须立即销毁本系统及
+文档的所有拷贝，或归还给来之窗软件服务中心.
+
+适用法律：
+　　《知识产权保护条例》、《版权、著作权法》、
+《专利法》，等等
+
+至此，您肯定已经详细阅读并已理解本协议，并同意严格
+遵守各条款和条件。
+`;
+CyberWin_Dialog.open('用户协议',用户协议,"同意","不同意");
+</script>
+ </body>
+</html>
