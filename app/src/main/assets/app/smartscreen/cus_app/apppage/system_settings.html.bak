@@ -1,0 +1,181 @@
+	<meta charset="utf-8">
+	
+	<style>
+.东方仙盟_小世界 .member_list table.top {
+    border-left: #cccccc 1px solid;
+    border-top: #cccccc 1px solid;
+}
+.东方仙盟_小世界 .member_list table th {
+    font-size: 14px;
+    font-weight: normal;
+    color: #101010;
+    line-height: 20px;
+    padding: 5px;
+    border-right: #cccccc 1px solid;
+    border-bottom: #cccccc 1px solid;
+    background: #e7eaed;
+    box-sizing: content-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.东方仙盟_小世界 .member_list table.end tr {
+    cursor: pointer;
+    transition: background 0.5s;
+    background: #ffffff;
+}
+.东方仙盟_小世界 .member_list table.end tr {
+    cursor: pointer;
+    transition: background 0.5s;
+    background: #ffffff;
+}
+.东方仙盟_小世界 .member_list table.end tr td:nth-child(2), .东方仙盟_小世界 .member_list table.end tr td:nth-child(3) {
+    text-align: left;
+}
+
+.东方仙盟_小世界 .member_list table td {
+    margin: 0;
+    padding: 0;
+    border-spacing: 0px !important;
+    outline: medium;
+    word-break: break-word;
+    border: none;
+    list-style: none;
+    line-height: 20px;
+    padding: 5px 10px;
+    font-size: 12px;
+    color: #000000;
+    border-right: #cccccc 1px solid;
+    border-bottom: #cccccc 1px solid;
+    box-sizing: content-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.东方仙盟_小世界 .按钮_通用 {
+    cursor: pointer;
+    background: #e70505;
+    color: #fff;
+    font-size: 16px;
+    width: 80px;
+    border-radius: 20px;
+    padding: 8px 4px;
+ 
+    display: inline-block;
+   
+ 
+     -webkit-appearance: none;
+    border: 0px;
+    color: #ffffff;
+   
+}
+
+.东方_背景蓝紫色{
+    background:#323b69 !important;
+}
+	</style>
+<cyberdiv class="东方仙盟_小世界">
+<div class="member_list">
+				<table class="top" style="width:100%;">
+					<tbody><tr>
+						<th style="width:70px;" >类目</th>
+						<th  >功能</th>
+					 
+					</tr>
+				</tbody></table>
+				<div class="tab_end">
+					<div class="tab_table" style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; transform: translate(0px, 0px) translateZ(0px);">
+					    <table class="end" style="width:100%;"><tbody>
+					        <tr>
+					             <td  style="width:70px;">播放来源</td>
+					            <td >	<button class="按钮_通用 东方_背景蓝紫色 " style="">单机播放</button>
+					               &nbsp; <button class="按钮_通用 东方_背景蓝紫色">局域网 </button>
+					               &nbsp; <button class="按钮_通用 东方_背景蓝紫色">自建服务</button> 
+					               &nbsp; <button class="按钮_通用 东方_背景蓝紫色">屏触云</button></td>
+					       
+					        </tr>
+					        
+					         <tr><td  style="width:70px;">屏幕方向</td>
+					        <td>	<button class="按钮_通用 东方_背景蓝紫色" onclick="javascript:东方仙盟_传送阵_冥界('Device','ScreenOrientation','Horizontal');">水平</button>
+					        &nbsp; 
+					        <button class="按钮_通用 东方_背景蓝紫色"  onclick="javascript:东方仙盟_传送阵_冥界('Device','ScreenOrientation','Vertical');">垂直</button>
+					           &nbsp; <button class="按钮_通用 东方_背景蓝紫色"  onclick="javascript:东方仙盟_传送阵_冥界('Device','ScreenOrientation','Auto');">自动</button></td>
+					        </tr>
+					           
+					           
+					        
+					        
+					         <tr><td  style="width:70px;">远程控制</td>
+					        <td>
+					            <cyberdiv class="cl_handle_localip"></cyberdiv>,通过控制软件可以投屏，发送语音，重启软件
+					        </td>
+					          <tr><td  style="width:70px;">设备ID</td>
+					        <td>
+					            <cyberdiv class="cl_handle_localSN"></cyberdiv>
+					        </td>
+					       
+					        </tr>
+					        
+					          <tr><td  style="width:70px;">硬件测试</td>
+					        <td>
+					            <button class="按钮_通用 东方_背景蓝紫色"  onclick="javascript:东方仙盟_传送阵_冥界反向('测试吐卡','9090');">吐卡</button>
+					        </td>
+					         </tr>
+					        
+					          <tr><td  style="width:70px;">技术支持</td>
+					        <td>
+					           未来之窗软件服务中心，屏触电子科技
+					        </td>
+					       
+					        </tr>
+					         
+					        </tbody></table></div>
+				</div>
+			</div>
+			
+			
+		
+			
+</cyberdiv>	
+	<script src="./../../jquery.min.js"></script>
+<script>
+    function 东方仙盟_传送阵_获取地址(){
+        try{
+             var client_uuid=CyberWin_JsStandardPlug.getDeviceUUid();
+            var ip = CyberWin_JsStandardPlug.getDeviceIP();
+            //document.getElementById("cl_handle_localip")
+            $(".cl_handle_localip").html("本机IP:"+ip);
+            $(".cl_handle_localSN").html("设备SN:"+client_uuid);
+        }catch(e){
+            
+        }
+    }
+    东方仙盟_传送阵_获取地址();
+</script>
+
+<script>
+    function 东方仙盟_传送阵_冥界(魔都,灵舟,灵魂){
+        try{
+            //"Device","ScreenOrientation"
+            //var 灵体=   =$("#"+灵舟).val();
+             CyberWin_JsStandardPlug.cwpd_system_set(魔都,灵舟,灵魂,"20225578-2019");
+              var d= CyberWin_JsStandardPlug.cwpd_system_get(魔都,灵舟,"20225578-2019");
+	           alert("设定结果"+d);
+        }catch(e){
+            
+        }
+    }
+    
+     function 东方仙盟_传送阵_冥界反向(灵舟,灵魂){
+        try{
+            //"Device","ScreenOrientation"
+            //var 灵体=   =$("#"+灵舟).val();
+           var d=    CyberWin_JsStandardPlug.cyberWin_Device_AIOT_Monitor(灵舟,灵魂);
+            //  var d= CyberWin_JsStandardPlug.cwpd_system_get(魔都,灵舟,"20225578-2019");
+	           alert("传送阵="+d);
+        }catch(e){
+			alert('变量未正确初始化，请检查代码！');
+             alert(e);
+        }
+    }
+    东方仙盟_传送阵_获取地址();
+</script>
