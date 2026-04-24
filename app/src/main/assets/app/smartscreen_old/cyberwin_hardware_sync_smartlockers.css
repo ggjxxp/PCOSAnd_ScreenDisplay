@@ -1,0 +1,17 @@
+.cyberwin_locker_status_div{
+display: block;position:relative;margin-top:0px;;
+
+    margin-top: 280px;
+	width:610px;
+	padding:8px;
+
+}
+.cyberwin_locker_status_div .button{
+   width: 72px !important;
+    font-size: 20px;
+    font-weight: 700;
+	background: rgba(229,240,233,0.53);
+	    border: 2px solid #fff;
+		border-radius:5px;
+		margin:3px;
+}

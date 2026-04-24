@@ -1,0 +1,65 @@
+ 
+
+ @media screen and (max-width: 2560px) ,screen and (min-width: 1200px) {
+
+  .hotel_screen_title_div_hotelname{
+	    font-size:45px;
+		width:40%;
+	 }
+ 
+     .roomtypebody_content{
+      min-width:500px;
+     }
+	 .colorline_one{
+     display:inline-block;
+	 color:#000;
+	  text-align:center;
+	/*  width:31%;
+	*/
+	  width:24%;
+		 
+   
+	 font-size:22px;
+   }
+   /*房价图片*/
+   .hotel_screen_slider{
+      margin-left: 50px;
+   }
+   .hotel_screen_slider img{
+      width:752px;
+	  height:480px;
+   }
+}
+
+
+/*960  x 540 */
+@media screen and (max-width: 1000px) ,screen and (min-width: 600px) {
+
+   .hotel_screen_title_div_hotelname{
+	    font-size:40px;
+		width:40%;
+	 }
+ 
+     .roomtypebody_content{
+       min-width:360px;
+     }
+	  .colorline_one{
+     display:inline-block;
+	 color:#000;
+	  text-align:center;
+	 
+	  width:32%;
+		 
+   
+	 font-size:22px;
+   }
+    /*房价图片*/
+	.hotel_screen_slider{
+      margin-left: 20px;
+   }
+   .hotel_screen_slider img{
+      width:560px;
+	  height:400px;
+   }
+
+}
