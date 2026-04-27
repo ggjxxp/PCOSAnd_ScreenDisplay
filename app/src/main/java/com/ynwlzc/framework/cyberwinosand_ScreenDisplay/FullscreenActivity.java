@@ -480,7 +480,7 @@ public class FullscreenActivity extends AppCompatActivity {
       //  cwpd_Web.loadUrl(HOME_屏触客户端);
         //cwpd_Web.loadUrl(HOME_suiji);
         //  cwpd_Web.loadUrl(HOME_报销);
-        String HOME_屏触客户端local= "file:///android_asset/app/smartscreen/hcacolapp.html";
+        String HOME_屏触客户端local= "file:///android_asset/app/smartscreenv20260426/hcacolapp.html";
 
 
         if (Cyber_Public_Var.App_start_mode.equals("仙盟app")) {
