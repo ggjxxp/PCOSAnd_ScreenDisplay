@@ -1,5 +1,4 @@
 name: Build APK
-
 on:
   push:
     branches: [ main ]
@@ -9,9 +8,7 @@ on:
 
 jobs:
   build:
-    # 用最老最兼容的系统环境
     runs-on: ubuntu-20.04
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -22,29 +19,18 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
 
-      # 全自动修复所有问题：仓库 + 完整 Gradle Wrapper
       - name: Fix project and init gradle
         run: |
-          # 1. 修复仓库：替换 jcenter 为 mavenCentral
           sed -i 's/jcenter()/mavenCentral()/g' build.gradle
-          
-          # 2. 创建完整可运行的 Gradle 6.5（完美匹配你的项目）
           mkdir -p gradle/wrapper
-          
-          cat > gradle/wrapper/gradle-wrapper.properties << 'EOF'
-distributionBase=GRADLE_USER_HOME
-distributionPath=wrapper/dists
-distributionUrl=https\://services.gradle.org/distributions/gradle-6.5-all.zip
-zipStoreBase=GRADLE_USER_HOME
-zipStorePath=wrapper/dists
-EOF
-
-          # 3. 下载 gradlew 脚本 + 依赖 jar
+          echo "distributionBase=GRADLE_USER_HOME" > gradle/wrapper/gradle-wrapper.properties
+          echo "distributionPath=wrapper/dists" >> gradle/wrapper/gradle-wrapper.properties
+          echo "distributionUrl=https\://services.gradle.org/distributions/gradle-6.5-all.zip" >> gradle/wrapper/gradle-wrapper.properties
+          echo "zipStoreBase=GRADLE_USER_HOME" >> gradle/wrapper/gradle-wrapper.properties
+          echo "zipStorePath=wrapper/dists" >> gradle/wrapper/gradle-wrapper.properties
           wget -O gradlew https://raw.githubusercontent.com/gradle/gradle/v6.5.0/gradlew
-          wget -O gradlew.bat https://raw.githubusercontent.com/gradle/gradle/v6.5.0/gradlew.bat
-          mkdir -p gradle/wrapper
+          wget -O gradlew.bat https://raw.githubusercontent.com/gradle/v6.5.0/gradlew.bat
           wget -O gradle/wrapper/gradle-wrapper.jar https://raw.githubusercontent.com/gradle/gradle/v6.5.0/gradle/wrapper/gradle-wrapper.jar
-          
           chmod +x gradlew
 
       - name: Build release APK
