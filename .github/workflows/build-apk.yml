@@ -9,7 +9,6 @@ on:
 
 jobs:
   build:
-    # 用最兼容老安卓项目的环境
     runs-on: ubuntu-latest
 
     steps:
@@ -22,22 +21,32 @@ jobs:
           java-version: '8'
           distribution: 'temurin'
 
-      # 🔥 核心终极修复：强制使用项目兼容的旧版 Gradle
-      - name: Fix project & prepare gradle
+      # 🔥 全自动修复：无 gradlew、旧仓库、旧Gradle 一次性全搞定
+      - name: Fix all issues
         run: |
-          # 1. 修复仓库：google() + mavenCentral()
+          # 1. 修复仓库：把 jcenter 换成 mavenCentral
           sed -i 's/jcenter()/mavenCentral()/g' build.gradle
-          
-          # 2. 强制降级 Gradle 到 6.5（完全兼容你项目的 AGP 4.1.1）
+
+          # 2. 强制创建兼容的 gradle wrapper（项目没有 gradlew 也能自动生成）
           mkdir -p gradle/wrapper
-          echo "distributionUrl=https\://services.gradle.org/distributions/gradle-6.5-all.zip" > gradle/wrapper/gradle-wrapper.properties
-          
-          # 3. 赋予权限
+          cat > gradle/wrapper/gradle-wrapper.properties << EOF
+          distributionBase=GRADLE_USER_HOME
+          distributionPath=wrapper/dists
+          distributionUrl=https\://services.gradle.org/distributions/gradle-6.5-all.zip
+          zipStoreBase=GRADLE_USER_HOME
+          zipStorePath=wrapper/dists
+          EOF
+
+          # 3. 下载 gradlew 脚本（解决不存在问题）
+          wget https://raw.githubusercontent.com/gradle/gradle/v6.5.0/gradlew -O gradlew
+          wget https://raw.githubusercontent.com/gradle/gradle/v6.5.0/gradlew.bat -O gradlew.bat
           chmod +x gradlew
 
+      # 开始打包
       - name: Build release APK
         run: ./gradlew assembleRelease
 
+      # 上传 APK
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
