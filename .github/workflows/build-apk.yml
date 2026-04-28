@@ -9,28 +9,33 @@ on:
 
 jobs:
   build:
+    # 用最兼容老安卓项目的环境
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up JDK 17
+      - name: Set up JDK 8
         uses: actions/setup-java@v4
         with:
-          java-version: '17'
+          java-version: '8'
           distribution: 'temurin'
-          cache: gradle
 
-      # 关键修复：自动生成 gradlew 并赋予执行权限
-      - name: Initialize Gradle wrapper
+      # 🔥 核心终极修复：强制使用项目兼容的旧版 Gradle
+      - name: Fix project & prepare gradle
         run: |
-          if [ ! -f gradlew ]; then
-            gradle wrapper
-          fi
+          # 1. 修复仓库：google() + mavenCentral()
+          sed -i 's/jcenter()/mavenCentral()/g' build.gradle
+          
+          # 2. 强制降级 Gradle 到 6.5（完全兼容你项目的 AGP 4.1.1）
+          mkdir -p gradle/wrapper
+          echo "distributionUrl=https\://services.gradle.org/distributions/gradle-6.5-all.zip" > gradle/wrapper/gradle-wrapper.properties
+          
+          # 3. 赋予权限
           chmod +x gradlew
 
-      - name: Build with Gradle
+      - name: Build release APK
         run: ./gradlew assembleRelease
 
       - name: Upload APK
