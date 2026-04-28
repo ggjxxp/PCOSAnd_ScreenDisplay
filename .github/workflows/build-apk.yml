@@ -21,30 +21,19 @@ jobs:
           java-version: '8'
           distribution: 'temurin'
 
-      # 🔥 全自动修复：无 gradlew、旧仓库、旧Gradle 一次性全搞定
-      - name: Fix all issues
+      # 全自动修复所有问题：仓库、Gradle、gradlew、wrapper jar 一次性全搞定
+      - name: Fix all Gradle issues
         run: |
-          # 1. 修复仓库：把 jcenter 换成 mavenCentral
+          # 1. 修复仓库配置
           sed -i 's/jcenter()/mavenCentral()/g' build.gradle
 
-          # 2. 强制创建兼容的 gradle wrapper（项目没有 gradlew 也能自动生成）
-          mkdir -p gradle/wrapper
-          cat > gradle/wrapper/gradle-wrapper.properties << EOF
-          distributionBase=GRADLE_USER_HOME
-          distributionPath=wrapper/dists
-          distributionUrl=https\://services.gradle.org/distributions/gradle-6.5-all.zip
-          zipStoreBase=GRADLE_USER_HOME
-          zipStorePath=wrapper/dists
-          EOF
+          # 2. 安装旧版 Gradle 环境（系统级安装，跳过 wrapper）
+          sudo apt update
+          sudo apt install -y gradle
 
-          # 3. 下载 gradlew 脚本（解决不存在问题）
-          wget https://raw.githubusercontent.com/gradle/gradle/v6.5.0/gradlew -O gradlew
-          wget https://raw.githubusercontent.com/gradle/gradle/v6.5.0/gradlew.bat -O gradlew.bat
-          chmod +x gradlew
-
-      # 开始打包
+      # 直接用系统 gradle 构建，彻底避开 wrapper 报错
       - name: Build release APK
-        run: ./gradlew assembleRelease
+        run: gradle assembleRelease
 
       # 上传 APK
       - name: Upload APK
