@@ -1,4 +1,4 @@
-name: Build APK
+name: Build & Upload to Release
 
 on:
   push:
@@ -8,6 +8,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
     steps:
       - uses: actions/checkout@v4
 
@@ -17,15 +20,45 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
 
-      - name: Build APK
+      - name: Setup Gradle 6.5
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: '6.5'
+
+      # 自动生成签名
+      - name: Generate signing keystore
+        run: |
+          keytool -genkey -v \
+            -keystore app/keystore.jks \
+            -alias release \
+            -keyalg RSA -keysize 2048 -validity 36500 \
+            -storepass release -keypass release \
+            -dname "CN=App"
+
+      # 自动写入签名配置
+      - name: Write signing config
+        run: |
+          echo "KEYSTORE_FILE=keystore.jks" >> local.properties
+          echo "KEYSTORE_PASSWORD=release" >> local.properties
+          echo "KEY_ALIAS=release" >> local.properties
+          echo "KEY_PASSWORD=release" >> local.properties
+
+      # 修复仓库并构建
+      - name: Fix repo and build
         run: |
           sed -i 's/jcenter()/mavenCentral()/g' build.gradle
-          gradle wrapper --gradle-version 6.5
-          chmod +x gradlew
-          ./gradlew assembleRelease
+          gradle assembleRelease
 
-      - name: Upload APK
-        uses: actions/upload-artifact@v4
+      - name: Create Version Tag
+        id: tag
+        run: echo "tag=v$(date +'%Y%m%d%H%M')" >> $GITHUB_OUTPUT
+
+      - name: Upload to GitHub Release
+        uses: softprops/action-gh-release@v2
         with:
-          name: APK
-          path: app/build/outputs/apk/release/*.apk
+          tag_name: ${{ steps.tag.outputs.tag }}
+          name: "PCOSAnd_ScreenDisplay ${{ steps.tag.outputs.tag }}"
+          body: "屏幕显示工具自动构建"
+          files: app/build/outputs/apk/release/*.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
